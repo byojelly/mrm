@@ -29,4 +29,5 @@ Steps
 2) copy of gemfiles and understand how they working
 3) setup devise for user
 4) setup migrations using rails generator model
-5) setup required associations
+5) setup required associations in models
+6) setup validations for database data (contact, item)
