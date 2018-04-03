@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20180403172757) do
     t.string "city"
     t.string "state"
     t.integer "zip"
-    t.integer "phone"
-    t.string "email"
+    t.string "phone"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180403172757) do
     t.integer "year"
     t.string "condition"
     t.text "detail"
-    t.string "type"
+    t.string "itemtype"
     t.boolean "available", default: true
     t.integer "quantity", default: 1
     t.integer "shop_id"

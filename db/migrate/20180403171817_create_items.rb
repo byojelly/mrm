@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.integer :year
       t.string :condition
       t.text :detail
-      t.string :type
+      t.string :itemtype
       t.boolean :available, default: true
       t.integer :quantity, default: 1
       t.integer :shop_id
