@@ -28,3 +28,5 @@ Steps
 1) rails new mysticridgemusic #setup new project
 2) copy of gemfiles and understand how they working
 3) setup devise for user
+4) setup migrations using rails generator model
+5) setup required associations
