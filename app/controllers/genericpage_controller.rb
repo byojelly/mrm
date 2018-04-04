@@ -3,6 +3,6 @@ class GenericpageController < ApplicationController
   def index
     #  @categories = Category.all
     #  @items = Item.available_items
-binding.pry
+#binding.pry
   end
 end
