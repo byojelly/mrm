@@ -1,6 +1,14 @@
 <nav class="header">
+        <%if current_user%>
+              You are signed in as <%=current_user.email%> |
+              <%=link_to "Sign Out", destroy_user_session_path, :method => "delete"%>
 
-         <%= link_to "Homepage", genericpage_path %>
+        <%else%>
+              Sign in <%= link_to "here", new_user_session_path%>
+        <%end%><br>
+        <%= link_to "Homepage", genericpage_path %>
+
+
 
           <%#lets use some devise methods %>
         <%# if current_user && current_user.current_cart%>
