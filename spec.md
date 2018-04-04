@@ -31,3 +31,4 @@ Steps
 4) setup migrations using rails generator model
 5) setup required associations in models
 6) setup validations for database data (contact, item)
+7) install pundit dependencies, setup policy classes at later time

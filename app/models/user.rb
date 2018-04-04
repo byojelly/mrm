@@ -14,4 +14,10 @@ class User < ApplicationRecord
   has_many :shops
   has_one :contact
   has_many :items, through: :shops
+
+  def set_normal_role
+    #code to set user role to normal
+    #should also setup code to setup an admin as well
+    
+  end
 end
