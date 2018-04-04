@@ -8,6 +8,9 @@ class User < ApplicationRecord
   #validates :email, presence: true
   #validates :email, uniqueness: true
 
+  #roles
+  enum role: [:normal, :admin]
+  #associations
   has_many :shops
   has_one :contact
   has_many :items, through: :shops
