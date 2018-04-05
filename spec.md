@@ -33,3 +33,4 @@ Steps
 6) setup validations for database data (contact, item)
 7) install pundit dependencies, setup policy classes at later time
 8) setup routes and visuals of site using, views, controllers, and models
+9) setup omniauth login

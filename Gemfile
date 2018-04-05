@@ -75,7 +75,10 @@ group :development, :test do
               #Pry is a powerful alternative to the standard IRB shell for Ruby. It is written from scratch to provide a number of advanced features
         gem "guard-rspec", require: false
               #Guard::RSpec allows to automatically & intelligently launch specs when files are modified.
-  #gem "thin"
+  gem "thin"
+            #used for facebook omni authorization
+            #As of March 2018, Facebook now requires secure (https) app urls. If you would like to test your App's functionality in the browser, you will need to do so running 'thin'. Use: thin start --ssl instead of rails s when testing in the browser. Note: your browser, (Chrome, for instance), may display a security warning that you are not accessing a secure site (in the end we are just faking an https url to satisfy Facebook). Feel free to bypass that warning and continue on to your site.
+
 # --------------------------------------------------
 
 end
