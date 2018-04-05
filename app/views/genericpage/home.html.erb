@@ -1,0 +1,6 @@
+TEST INDEX PAGE<br>
+
+Here are some of our newest items that are available!<br>
+<% @items.each do |item|%>
+  <li><%= link_to item.name, item_path(item)%> on sale in <%=item.shop.user.contact.city%>, <%=item.shop.user.contact.state%></li>
+<%end%>
