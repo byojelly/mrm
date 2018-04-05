@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :items, only: [:show]
   resources :shops, only: [:show]
 
+  #omni auth facebook routing
+  get '/auth/facebook/callback' => 'sessions#create'
   #
 
 end
