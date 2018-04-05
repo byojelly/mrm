@@ -1,8 +1,12 @@
 <nav class="header">
   <%#binding.pry%>
-        <%if current_user%>
-              You are signed in as <%=current_user.email%> |
-              <%=link_to "Sign Out", destroy_user_session_path, :method => "delete"%>
+        <%if current_user || session[:user_id]%>
+              <% if current_user%>
+                    You are signed in as <%=current_user.email%> |
+                    <%=link_to "Sign Out", destroy_user_session_path, :method => "delete"%>
+              <%else%>
+                     You are signed in as <%@user.email%>
+              <% end%>
         <%elsif current_page?('/users/sign_in')%>
 
         <%else%>

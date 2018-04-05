@@ -78,7 +78,7 @@ group :development, :test do
   gem "thin"
             #used to mock hhtps server facebook omni authorization
             #As of March 2018, Facebook now requires secure (https) app urls. If you would like to test your App's functionality in the browser, you will need to do so running 'thin'. Use: thin start --ssl instead of rails s when testing in the browser. Note: your browser, (Chrome, for instance), may display a security warning that you are not accessing a secure site (in the end we are just faking an https url to satisfy Facebook). Feel free to bypass that warning and continue on to your site.
-            # terminal command=>  --ssl
+            # terminal command=>   thin start
   gem 'omniauth'  #gem to allow omniauth (may already exist in devise)
   gem 'omniauth-facebook' #gem for facebook omniauth
   gem 'dotenv-rails'#Shim to load environment variables from .env into ENV in development.
