@@ -76,9 +76,14 @@ group :development, :test do
         gem "guard-rspec", require: false
               #Guard::RSpec allows to automatically & intelligently launch specs when files are modified.
   gem "thin"
-            #used for facebook omni authorization
+            #used to mock hhtps server facebook omni authorization
             #As of March 2018, Facebook now requires secure (https) app urls. If you would like to test your App's functionality in the browser, you will need to do so running 'thin'. Use: thin start --ssl instead of rails s when testing in the browser. Note: your browser, (Chrome, for instance), may display a security warning that you are not accessing a secure site (in the end we are just faking an https url to satisfy Facebook). Feel free to bypass that warning and continue on to your site.
-
+            # terminal command=>  --ssl
+  gem 'omniauth'  #gem to allow omniauth (may already exist in devise)
+  gem 'omniauth-facebook' #gem for facebook omniauth
+  gem 'dotenv-rails'#Shim to load environment variables from .env into ENV in development.
+            #Storing configuration in the environment is one of the tenets of a twelve-factor app. Anything that is likely to change between deployment environments–such as resource handles for databases or credentials for external services–should be extracted from the code into environment variables.
+            #But it is not always practical to set environment variables on development machines or continuous integration servers where multiple projects are run. dotenv loads variables from a .env file into ENV when the environment is bootstrapped.
 # --------------------------------------------------
 
 end
