@@ -37,3 +37,10 @@ Steps
     used https://www.codementor.io/anaumov/rails-omniauth-with-devise--github-example-du107rmn7 as guide along with loose help from https://richonrails.com/articles/google-authentication-in-ruby-on-rails/ (last link does not take devise into consideration)
 
     CURRENT flatiron CURRICULUM IS NOT CLEAR ON HOW TO IMPLEMENT. ASK FOR HELP RECONFIGURING TO HIDE THE CLIENT ID AND SECRET KEY USING DOT_ENV GEM. EXISTS IN CURRENT OMNIAUTH LESSON BUT IMPLEMENTATION OF FACEBOOK IN LESSON IS INCORRECT
+
+    adding additional omniauth affects the following:
+      - 1) gemfile
+        2) CallbacksController
+        3) initialize/devise.rb
+        4) user model (depending on how you set it up, my case not)
+        4) views file where signin link is located
