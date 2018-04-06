@@ -12,6 +12,7 @@ gem 'jquery-rails' #was in the flatiron store project
 gem 'sdoc', '~> 0.4.0',          group: :doc   #was in the flatiron store project
 gem 'pundit' #Pundit offers a way for us to organize our authorization code. With Pundit, you create Policy classes for your models, which define what users can do to those models. This gives you a straightforward, modular way to separate the concern of authorization from your controllers and your model logic.
 gem 'omniauth'  #gem to allow omniauth (may already exist in devise)
+gem 'omniauth-github'
 #-----------------------------------------
 
         # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
