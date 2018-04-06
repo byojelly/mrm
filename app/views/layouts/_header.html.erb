@@ -1,30 +1,3 @@
 <nav class="header">
-  <%#binding.pry%>
-        <%if current_user || session[:user_id]%>
-              <% if current_user%>
-                    You are signed in as <%=current_user.email%> |
-                    <%=link_to "Sign Out", destroy_user_session_path, :method => "delete"%>
-              <%else%>
-                     You are signed in as <%@user.email%>
-              <% end%>
-        <%elsif current_page?('/users/sign_in')%>
-
-        <%else%>
-              Sign in <%= link_to "here", new_user_session_path%> or use <%= link_to("Facebook to login", '/auth/facebook')%>
-
-        <%end%><br>
-        <%= link_to "Homepage", genericpage_path %>
-
-
-
-          <%#lets use some devise methods %>
-        <%# if current_user && current_user.current_cart%>
-           <%#= link_to "Cart", cart_path(current_user.current_cart) %>
-        <%# end %>
-
-        <%#= render partial: 'layouts/sign_in'%>
-
-
-
 
 </nav>
