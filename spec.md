@@ -34,3 +34,4 @@ Steps
 7) install pundit dependencies, setup policy classes at later time
 8) setup routes and visuals of site using, views, controllers, and models
 9) setup omniauth login
+    CURRENT flatiron CURRICULUM IS NOT CLEAR ON HOW TO IMPLEMENT. ASK FOR HELP RECONFIGURING TO HIDE THE CLIENT ID AND SECRET KEY USING DOT_ENV GEM. EXISTS IN CURRENT OMNIAUTH LESSON BUT IMPLEMENTATION OF FACEBOOK IN LESSON IS INCORRECT
