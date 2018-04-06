@@ -10,10 +10,12 @@
         <%elsif current_page?('/users/sign_in')%>
 
         <%else%>
-              Sign in <%= link_to "here", new_user_session_path%> or sign in using: <%= link_to "Github", user_github_omniauth_authorize_path, id: "sign_in" %>
+              Sign in <%= link_to "here", new_user_session_path%> or sign in using: <%= link_to "Github", user_github_omniauth_authorize_path, id: "sign_in" %> || <%= link_to "Google", user_google_oauth2_omniauth_authorize_path, id: "sign_in" %>
 
         <%end%><br>
         <%= link_to "Homepage", genericpage_path %>
+
+
 
 
 
