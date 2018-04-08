@@ -11,7 +11,7 @@
                 Sign in using: <%= link_to "Github", user_github_omniauth_authorize_path, id: "sign_in" %> || <%= link_to "Amazon", user_amazon_omniauth_authorize_path, id: "sign_in" %>
 
         <%else%>
-              Sign in <%= link_to "here", new_user_session_path%> 
+              Sign in <%= link_to "here", new_user_session_path%>
         <%end%><br>
         <%= link_to "Homepage", genericpage_path %>
 
