@@ -258,7 +258,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-   config.omniauth :github, 'f817718c1a6e4a51c151', '18ddfa9271eae8eda91187f2f39c0c89bd838389', :scope => 'user:email'
+   config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], :scope => 'user:email'
    config.omniauth :amazon, 'amzn1.application-oa2-client.83830ff0831a423099887129dde4e370
 ', '16f2cdeb86ed027dba4196c46451c05166fc034ba953cbfaaebd86ce199fb781'
   # ==> Warden configuration
