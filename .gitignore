@@ -22,4 +22,5 @@
 
 .byebug_history
 
+#Ignore the .env file
 .env
