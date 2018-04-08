@@ -259,8 +259,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
    config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], :scope => 'user:email'
-   config.omniauth :amazon, 'amzn1.application-oa2-client.83830ff0831a423099887129dde4e370
-', '16f2cdeb86ed027dba4196c46451c05166fc034ba953cbfaaebd86ce199fb781'
+   config.omniauth :amazon, ENV['AMAZON_KEY'], ENV['AMAZON_SECRET']
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
