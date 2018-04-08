@@ -22,7 +22,5 @@
 
 .byebug_history
 
-
-#Ignore the .env file
-
+#ignore this file for omniauth
 .env
