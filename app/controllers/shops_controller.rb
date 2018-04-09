@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-    before_action :set_shop, only:[:show, :edit, :update]
+    before_action :set_shop, only:[:show, :edit, :update, :item]
   def show
   end
   def new

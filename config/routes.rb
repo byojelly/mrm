@@ -8,8 +8,11 @@ Rails.application.routes.draw do
 
   root 'genericpage#home', as: 'genericpage'
   resources :items, only: [:show]
-  resources :shops, only: [:show, :new, :create, :edit, :update]
-
+  resources :shops, only: [:show, :new, :create, :edit, :update] do
+            #nested resources
+            resources :items, only: [:show]
+  end
+  #get 'shops/:id/items/:item_id', to: 'shops#item'
 #  #omni auth facebook routing
 #  get '/auth/facebook/callback' => 'sessions#create'
 #  #

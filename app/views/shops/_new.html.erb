@@ -1,0 +1,17 @@
+Add information here to create a new form:
+
+<%= form_for(@shop) do |f| %>
+  <%= render partial: "layouts/form_error", locals: {object: @shop}%>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+Shop(id: integer, name: string, detail: text, user_id: integer, created_at: datetime, updated_at: datetime)
