@@ -11,13 +11,10 @@
 
   <body>
           <h1>Mystic Ridge Music</h1>
-          
-          <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
-          <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
-          <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
 
+          <%= render partial: 'layouts/messages'%><br>
 
-          <%= render 'layouts/signin'%><br>
+          <%= render partial: 'layouts/signin'%><br>
 
           <%= yield %>
   </body>
