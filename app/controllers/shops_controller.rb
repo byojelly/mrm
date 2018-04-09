@@ -1,6 +1,7 @@
 class ShopsController < ApplicationController
     before_action :set_shop, only:[:show, :edit, :update, :item]
   def show
+    #binding.pry
   end
   def new
       @shop=Shop.new
@@ -22,6 +23,7 @@ class ShopsController < ApplicationController
 
   private
   def set_shop
+    #binding.pry
     @shop = Shop.find_by(id: params[:id])
   end
   def shop_params
