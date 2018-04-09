@@ -39,8 +39,10 @@ Steps
     CURRENT flatiron CURRICULUM IS NOT CLEAR ON HOW TO IMPLEMENT. ASK FOR HELP RECONFIGURING TO HIDE THE CLIENT ID AND SECRET KEY USING DOT_ENV GEM. EXISTS IN CURRENT OMNIAUTH LESSON BUT IMPLEMENTATION OF FACEBOOK IN LESSON IS INCORRECT
 
     adding additional omniauth affects the following:
+        initial) lookup omniauth provider gem, follow instructions on setting up app with the provider interface, provide callback url like http://localhost:3000/users/auth/amazon/callback, and obtain app key and app secret
       - 1) gemfile
-        2) CallbacksController
+        2) CallbacksController add method matching gemfile name
         3) initialize/devise.rb
         4) user model (depending on how you set it up, my case not)
         4) views file where signin link is located
+10) set nested hashes

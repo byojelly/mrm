@@ -1,2 +1,7 @@
 Shop Show page for:<br>
  <h1><%=@shop.name%></h1>
+
+<%#binding.pry%>
+<%= render partial:'shops/inventory', locals: {shop: @shop}%><br>
+
+<%= link_to "Add new item" %>
