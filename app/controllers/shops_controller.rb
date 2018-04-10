@@ -19,8 +19,12 @@ class ShopsController < ApplicationController
 
   end
   def update
-      @shop.update(shop_params)
-      redirect_to shop_path(@shop)
+      if @shop.update(shop_params)
+          redirect_to shop_path(@shop)
+      else
+          #binding.pry
+          render 'edit'
+      end
   end
 
 
