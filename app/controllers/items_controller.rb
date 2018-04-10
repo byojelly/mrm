@@ -1,9 +1,36 @@
 class ItemsController < ApplicationController
-#note, if an index is wanted make sure to add code specified in Routing and Nested Resources readme
-  def show
-    #binding.pry
-    @item = Item.find_by(id: params[:id])
+  before_action :set_item, only:[:show, :edit, :update, :item]
+def show
+  #binding.pry
+end
+def new
+    @item=Item.new
+end
+def create
+#binding.pry
+  @item = Item.new(item_params)
+  @item.save
+  redirect_to item_path(@item)
+end
+def edit
 
-  end
+end
+def update
+    @item.update(item_params)
+    redirect_to item_path(@item)
+end
+
+
+
+private
+def set_item
+  #binding.pry
+  @item = Item.find_by(id: params[:id])
+end
+def item_params
+  params.require(:item).permit(:name, :detail, :user_id)
+end
+
+
 
 end

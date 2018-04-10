@@ -1,6 +1,7 @@
 <nav class="header">
-   <%= render partial: 'layouts/signin'%><br>
    <%= link_to "Homepage", genericpage_path %> <br>
+   <%= render partial: 'layouts/signin'%><br>
+
    <% if current_user && !current_page?('/shops/new')%>
             <% if current_user.shops.count != 0 %>
                 My shops: <%current_user.shops.each do |shop|%>

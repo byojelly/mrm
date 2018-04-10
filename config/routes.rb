@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'genericpage#home', as: 'genericpage'
-  resources :items, only: [:show]
+  resources :items, only: [:show, :new, :create, :edit, :update]
   resources :shops, only: [:show, :new, :create, :edit, :update] do
             #nested resources
             resources :items, only: [:show]

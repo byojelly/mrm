@@ -1,8 +1,11 @@
 Shop Show page for:<br>
  <h1><%=@shop.name%></h1>
+ Shop details:
+ <li><%=@shop.detail%></li>
 
 <%#binding.pry%>
 <%= render partial:'shops/inventory', locals: {shop: @shop}%><br>
 
-<%= link_to "Add new item" %>
+Shop Options: <br>
+<%= link_to "Add new item", new_item_path %> |
 <%= link_to "Edit this shop", edit_shop_path(@shop) %>
