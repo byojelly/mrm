@@ -8,19 +8,8 @@
                      You are signed in as <%@user.email%>
               <% end%>
         <%elsif current_page?('/users/sign_in')%>
-                Sign in using: <%= link_to "Github", user_github_omniauth_authorize_path, id: "sign_in" %> || <%= link_to "Amazon", user_amazon_omniauth_authorize_path, id: "sign_in" %>
 
         <%else%>
               Sign in <%= link_to "here", new_user_session_path%>
         <%end%><br>
-            <%#lets use some devise methods %>
-        <%# if current_user && current_user.current_cart%>
-           <%#= link_to "Cart", cart_path(current_user.current_cart) %>
-        <%# end %>
-
-        <%#= render partial: 'layouts/sign_in'%>
-
-
-
-
 </nav>
