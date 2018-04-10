@@ -45,5 +45,4 @@ Steps
         3) initialize/devise.rb
         4) user model (depending on how you set it up, my case not)
         4) views file where signin link is located
-10) set nested hashes added to shops/:shop_id/items/:item_id, located on shops show page and home screen
-      - stuck at shops inventory partial , link is not generating correctly for   <li><%=link_to item.name, shop_item_path(item)%></li>
+10) set nested hashes added to shops/:shop_id/items/:item_id, located on shops show page and home screen. 
