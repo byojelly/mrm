@@ -1,4 +1,4 @@
-<%= form_for(@item) do |f| %>
+<%= form_for(shop_items_path) do |f| %>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
@@ -24,8 +24,8 @@
 
     <%= f.label :quantity%><br>
     <%= f.text_field :quantity%><br>
-
-    <%= f.hidden_field :shop_id, :value => parent.id%><br>
+<%#binding.pry%>
+    <%= f.hidden_field :shop_id, :value => @shop.id %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

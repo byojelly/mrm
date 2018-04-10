@@ -6,4 +6,5 @@ class Shop < ApplicationRecord
 
 
   validates :name, :user_id, :detail, presence: true
+
 end
