@@ -3,9 +3,7 @@ class ItemsController < ApplicationController
   def show
     #binding.pry
     @item = Item.find_by(id: params[:id])
-    if params[:shop_id]
-        @shop = Shop.find_by(id: params[:shop_id])
-    end
+
   end
 
 end
