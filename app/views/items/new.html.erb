@@ -1,3 +1,3 @@
 <h2>Lets add a new item to <%= @shop.name %>!</h2>
-
-<%#= render partial: "items/new_form", locals: {shop: @shop, item: @item}%>
+<%= render partial: "layouts/form_error", locals: {object: @item}%>
+<%#= render partial: "items/new_form"%>
