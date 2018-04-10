@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'genericpage#home', as: 'genericpage'
-  resources :items, only: [:show, :new, :create, :edit, :update]
+  #resources :items, only: [:show]
   resources :shops, only: [:show, :new, :create, :edit, :update] do
             #nested resources
-            resources :items, only: [:show]
+            resources :items, only: [:show, :new, :create, :edit, :update]
   end
   #get 'shops/:id/items/:item_id', to: 'shops#item'
 #  #omni auth facebook routing

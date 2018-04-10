@@ -9,8 +9,11 @@ class ShopsController < ApplicationController
   def create
 #binding.pry
     @shop = Shop.new(shop_params)
-    @shop.save
-    redirect_to shop_path(@shop)
+    if @shop.save
+        redirect_to shop_path(@shop)
+    else
+        render 'new'
+    end
   end
   def edit
 

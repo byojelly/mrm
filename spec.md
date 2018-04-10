@@ -45,4 +45,5 @@ Steps
         3) initialize/devise.rb
         4) user model (depending on how you set it up, my case not)
         4) views file where signin link is located
-10) set nested hashes added to shops/:shop_id/items/:item_id, located on shops show page and home screen. 
+10) set nested hashes added to shops/:shop_id/items/:item_id, located on shops show page and home screen.
+11) setup general crud actions for items, shops etc

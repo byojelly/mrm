@@ -7,5 +7,5 @@ Shop Show page for:<br>
 <%= render partial:'shops/inventory', locals: {shop: @shop}%><br>
 
 Shop Options: <br>
-<%= link_to "Add new item", new_item_path %> |
+<%= link_to "Add new item", new_shop_item_path(@shop) %> |
 <%= link_to "Edit this shop", edit_shop_path(@shop) %>

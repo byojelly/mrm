@@ -5,6 +5,9 @@ def show
 end
 def new
     @item=Item.new
+    if params[:shop_id]
+      @shop = Shop.find_by(id: params[:shop_id])
+    end
 end
 def create
 #binding.pry
@@ -28,7 +31,7 @@ def set_item
   @item = Item.find_by(id: params[:id])
 end
 def item_params
-  params.require(:item).permit(:name, :detail, :user_id)
+  params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id)
 end
 
 

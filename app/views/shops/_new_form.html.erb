@@ -1,8 +1,4 @@
-Add information here to create a new form:
-
 <%= form_for(@shop) do |f| %>
-  <%= render partial: "layouts/form_error", locals: {object: @shop}%>
-
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>

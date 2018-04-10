@@ -5,5 +5,5 @@ class Shop < ApplicationRecord
   accepts_nested_attributes_for :items
 
 
-  validates :name, :user_id, presence: true
+  validates :name, :user_id, :detail, presence: true
 end
