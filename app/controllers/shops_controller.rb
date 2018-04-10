@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
       @shop=Shop.new
   end
   def create
+#binding.pry
     @shop = Shop.new(shop_params)
     @shop.save
     redirect_to shop_path(@shop)
@@ -27,7 +28,7 @@ class ShopsController < ApplicationController
     @shop = Shop.find_by(id: params[:id])
   end
   def shop_params
-    params.require(:shop).permit(:name, :detail)
+    params.require(:shop).permit(:name, :detail, :user_id)
   end
 
 end

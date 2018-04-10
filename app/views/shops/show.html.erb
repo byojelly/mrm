@@ -5,3 +5,4 @@ Shop Show page for:<br>
 <%= render partial:'shops/inventory', locals: {shop: @shop}%><br>
 
 <%= link_to "Add new item" %>
+<%= link_to "Edit this shop", edit_shop_path(@shop) %>
