@@ -3,4 +3,6 @@
 
 <%= form_for(@item, :url => shop_items_path(@shop)) do |f| %>
         <%= render partial: "items/form", locals: {f: f}%>
-<% end %>
+<% end %><br>
+
+<%= link_to "cancel", shop_path(@shop)%>
