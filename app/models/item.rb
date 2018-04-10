@@ -6,12 +6,15 @@ class Item < ApplicationRecord
   validates :name, :condition, :itemtype, :shop_id, presence: true
   validates :condition, inclusion: { in: %w(used new), message: "%{value} is not a valid condition of used or new" }
   validates :itemtype, inclusion: { in: %w(electronic instrument gadget miscellaneous), message: "%{value} is not a valid item type" }
+  validates :year, numericality: {greater_than: 0, less_than_or_equal_to: Date.today.year}
+
 
   scope :available, -> {where("available = ?", true)}
   #this scope builds upon the previous scope
   scope :available_and_new, -> {available.order("created_at DESC").limit(6)}
         #where("available = ?", true)
   scope :unavailable, -> {where("available = ?", false)}
+  
 
 
 
