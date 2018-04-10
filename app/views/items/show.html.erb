@@ -1,4 +1,11 @@
 Item Show page for:<br>
- <h1>Item: <%=@item.name%></h1> <br>
+ <h1>Item: <%=@item.name%></h1>
+ <li>Year: <%=@item.year%></li>
+ <li>Condition: <%=@item.condition%></li>
+ <li>Details: <%=@item.detail%></li>
+ <li>Item Type: <%=@item.itemtype%></li>
+ <li>Quantity: <%=@item.quantity%></li>
+
+<br>
 Located at:  <%= link_to @item.shop.name, shop_path(@item.shop.id)%><br>
 <%= link_to "Edit this item.", edit_shop_item_path(@item.shop, @item)%>
