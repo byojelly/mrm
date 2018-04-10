@@ -1,3 +1,4 @@
 Item Show page for:<br>
  <h1>Item: <%=@item.name%></h1> <br>
-Located at:  <%= link_to @item.shop.name, shop_path(@item.shop.id)%>
+Located at:  <%= link_to @item.shop.name, shop_path(@item.shop.id)%><br>
+<%= link_to "Edit this item.", edit_shop_item_path(@item.shop, @item)%>

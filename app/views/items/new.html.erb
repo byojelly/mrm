@@ -1,3 +1,6 @@
 <h2>Lets add a new item to <%= @shop.name %>!</h2>
 <%= render partial: "layouts/form_error", locals: {object: @item}%>
-<%= render partial: "items/new_form"%>
+
+<%= form_for(@item, :url => shop_items_path(@shop)) do |f| %>
+        <%= render partial: "items/form", locals: {f: f}%>
+<% end %>

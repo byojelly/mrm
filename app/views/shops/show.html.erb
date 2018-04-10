@@ -1,9 +1,10 @@
 Shop Show page for:<br>
  <h1><%=@shop.name%></h1>
- Shop details:
- <li><%=@shop.detail%></li>
+Shop details:
+ <li><%=@shop.detail%></li><br>
 
 <%#binding.pry%>
+Inventory:
 <%= render partial:'shops/inventory', locals: {shop: @shop}%><br>
 
 Shop Options: <br>

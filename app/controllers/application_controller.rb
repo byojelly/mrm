@@ -4,4 +4,6 @@ class ApplicationController < ActionController::Base
                   #https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-Role
 
   protect_from_forgery with: :exception
+
+
 end

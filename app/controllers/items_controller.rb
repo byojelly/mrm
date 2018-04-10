@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:show, :edit, :update, :item]
-  before_action :set_shop, only:[:new]
+  before_action :set_item, only:[:show, :edit, :update]
+  before_action :set_shop, only:[:new, :create, :update, :edit]
 def show
   #binding.pry
 end
@@ -10,7 +10,6 @@ end
 def create
 #binding.pry
   @item = Item.new(item_params)
-  @shop = Shop.find_by(id: params[:item][:shop_id])
   if @item.save
       redirect_to shop_item_path(@shop, @item)
   else
@@ -21,8 +20,12 @@ def edit
 
 end
 def update
-    @item.update(item_params)
-    redirect_to item_path(@item)
+    if @item.update(item_params)
+#binding.pry
+        redirect_to shop_item_path(@shop, @item)
+    else
+        render 'edit'
+    end
 end
 
 

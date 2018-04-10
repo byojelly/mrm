@@ -1,0 +1,7 @@
+<h2>Lets Edit the: <%= @item.name %>!</h2>
+<%= render partial: "layouts/form_error", locals: {object: @item}%>
+
+<%= form_for(@item, :url => shop_item_path(@shop, @item)) do |f| %>
+      <%= render partial: "items/form", locals: {f: f}%>
+      <%#binding.pry%>
+<%end%>
