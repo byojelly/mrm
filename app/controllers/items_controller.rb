@@ -8,10 +8,14 @@ def new
     @item=Item.new
 end
 def create
-binding.pry
+#binding.pry
   @item = Item.new(item_params)
-  @item.save
-  redirect_to item_path(@item)
+  @shop = Shop.find_by(id: params[:item][:shop_id])
+  if @item.save
+      redirect_to shop_item_path(@shop, @item)
+  else
+      render 'new'
+  end
 end
 def edit
 

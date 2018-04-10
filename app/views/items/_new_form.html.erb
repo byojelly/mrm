@@ -1,4 +1,4 @@
-<%= form_for(shop_items_path) do |f| %>
+<%= form_for(@item, :url => shop_items_path(@shop)) do |f| %>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
@@ -13,8 +13,8 @@
     <%= f.label :detail%><br>
     <%= f.text_area :detail%><br>
 
-    <%= f.label :item_type%><br>
-    <%= f.text_area :item_type%><br>
+    <%= f.label :itemtype%><br>
+    <%= f.text_area :itemtype%><br>
 
     <%= f.label :available%>:
     <%= f.label :available, "Yes", :value => "true"  %>
@@ -24,7 +24,7 @@
 
     <%= f.label :quantity%><br>
     <%= f.text_field :quantity%><br>
-<%#binding.pry%>
+
     <%= f.hidden_field :shop_id, :value => @shop.id %><br>
   </div>
   <div class="actions">
