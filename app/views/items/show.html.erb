@@ -5,9 +5,12 @@ Item Show page for:<br>
  <li>Details: <%=@item.detail%></li>
  <li>Item Type: <%=@item.itemtype%></li>
  <li>Quantity: <%=@item.quantity%></li>
-<h2>This item belongs to the following categories:</h2>
-<%@item.categories.each do |category|%>
-<li><%=link_to category.name, category_path(category)%></li>
-<%end%><br>
+
+
 Located at:  <%= link_to @item.shop.name, shop_path(@item.shop.id)%><br>
 <%= link_to "Edit this item.", edit_shop_item_path(@item.shop, @item)%>
+
+<h2>This item was serviced by a technician on the following dates:</h2>
+<%@item.tuneups.each do |tuneup|%>
+<li><%=date_format(tuneup.date)%> || By: <%= tuneup.technician.name%></li>
+<%end%><br>
