@@ -22,12 +22,12 @@
     <%= f.label :itemtype%><br>
     <%= f.select :itemtype, ['instrument', 'electronic', 'gadget', "miscellaneous"]%><br>
 
-    <%=f.fields_for :categories do |cat|%>
-            <%= cat.label :new_category_1%>
-            <%= cat.collection_select :name, Category.order(:name), :id, :name, include_blank: true%><br>
-            <%= cat.label :new_category_2%>
-            <%= cat.collection_select :name1, Category.order(:name), :id, :name, include_blank: true%><br>
-    <%end%>
+    <%#=f.fields_for :categories do |cat|%>
+            <%#= cat.label :category_id%>
+            <%#= cat.collection_select :name, Category.order(:name), :id, :name, include_blank: true%><br>
+            <%#= cat.label :category_id%>
+            <%#= cat.collection_select :name1, Category.order(:name), :id, :name, include_blank: true%><br>
+    <%#end%>
 
     <%= f.label :quantity%><br>
     <%= f.text_field :quantity%><br>

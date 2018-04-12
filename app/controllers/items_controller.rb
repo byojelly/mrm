@@ -12,9 +12,14 @@ def new
     #@item.categories.build
 end
 def create
-binding.pry
+
   @item = Item.new(item_params)
+
   if @item.save
+    binding.pry
+      params[:item][:categories].each do |id|
+             #ItemCategory.create(category_id: id, item_id: @item.id)
+       end
       redirect_to shop_item_path(@shop, @item)
   else
       render 'new'
@@ -44,7 +49,7 @@ def set_shop
 end
 
 def item_params
-  params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id, categories_attributes: [:name])
+  params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id)
 end
 
 

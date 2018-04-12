@@ -47,3 +47,31 @@ Steps
         4) views file where signin link is located
 10) set nested hashes added to shops/:shop_id/items/:item_id, located on shops show page and home screen.
 11) setup general crud actions for items, shops etc
+
+
+<%= f.fields_for :addresses do |addr| %>
+    <%= addr.label :street_address_1 %>
+    <%= addr.text_field :street_address_1 %><br>
+
+    <%= addr.label :street_address_2 %>
+    <%= addr.text_field :street_address_2 %><br>
+
+    <%= addr.label :city %>
+    <%= addr.text_field :city %><br>
+
+    <%= addr.label :state %>
+    <%= addr.text_field :state %><br>
+
+    <%= addr.label :zipcode %>
+    <%= addr.text_field :zipcode %><br>
+
+    <%= addr.label :address_type %>
+    <%= addr.text_field :address_type %><br>
+  <% end %>
+   <%= f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
+   <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+
+
+   params[:item][:categories].each do |id|
+    ItemCategory.new(category_id: id, item_id: @item.id)
+  end
