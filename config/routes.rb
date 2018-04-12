@@ -12,7 +12,7 @@ Rails.application.routes.draw do
             #nested resources
             resources :items, only: [:show, :new, :create, :edit, :update]
   end
-  resources :categories, only: [:show]
+  #resources :categories, only: [:show]
   resources :contact, only: [:show, :edit, :update]
   #get 'shops/:id/items/:item_id', to: 'shops#item'
 #  #omni auth facebook routing

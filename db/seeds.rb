@@ -14,8 +14,8 @@
 User.destroy_all
 Shop.destroy_all
 Item.destroy_all
-Category.destroy_all
-Manufacturer.destroy_all
+Tuneup.destroy_all
+Technician.destroy_all
 Contact.destroy_all
 
 User.create([{email: "homer@simpson.com", password: "password"
@@ -72,35 +72,35 @@ Item.create([{name: "Guitar", year: 2000, condition: "used", detail: "bought thi
             { name: "Megaphone", year: 2017, condition: "new", detail: "bought this at a garage sale", itemtype:"electronic", shop_id: 3
             }])
 
-Category.create([{name: "strings"},
-            {name: "woodwinds"},
-            {name: "brass"},
-            {name: "percussion"},
-            {name: "keyboard"},
-            {name: "guitar"},
-            {name: "accessories"}])
+Technician.create([
+            {name: "frank"},
+            {name: "john"},
+            {name: "jimmy"},
+            {name: "jack"},
+            {name: "lewanda"},
+            {name: "ldasha"}])
 
-Manufacturer.create([
-            {name: "sony", category_id: 1, item_id: 1},
-            {name: "yamaha", category_id: 1, item_id: 2},
-            {name: "LG", category_id: 1, item_id: 4},
-            {name: "toshiba", category_id: 1, item_id: 5},
-            {name: "worlds best violas", category_id: 4, item_id: 3},
-            {name: "the piano gals", category_id: 4, item_id: 6},
-            {name: "the piano buds", category_id: 7, item_id: 7},
-            {name: "sony", category_id: 6, item_id: 1},
-            {name: "yamaha", category_id: 6, item_id: 2},
-            {name: "LG", category_id: 6, item_id: 4},
-            {name: "toshiba", category_id: 6, item_id: 5},
-            {name: "worlds best violas", category_id: 6, item_id: 8},
-            {name: "the piano gals", category_id: 4, item_id: 9},
-            {name: "the piano buds", category_id: 6, item_id: 11},
-            {name: "sony", category_id: 4, item_id: 12},
-            {name: "sony", category_id: 7, item_id: 13},
-            {name: "sony", category_id: 7, item_id: 14},
-            {name: "sony", category_id: 7, item_id: 15},
-            {name: "sony", category_id: 7, item_id: 16},
-            {name: "sony", category_id: 7, item_id: 17},
-            {name: "sony", category_id: 6, item_id: 10}])
+Tuneup.create([
+            {date: "2010-01-10", technician_id: 1, item_id: 1},
+            {date: "2011-01-17", technician_id: 1, item_id: 2},
+            {date: "2012-01-16", technician_id: 1, item_id: 4},
+            {date: "2013-01-15", technician_id: 1, item_id: 5},
+            {date: "2015-01-14", technician_id: 1, item_id: 3},
+            {date: "2016-01-13", technician_id: 1, item_id: 6},
+            {date: "2018-01-12", technician_id: 2, item_id: 7},
+            {date: "2010-01-10", technician_id: 2, item_id: 1},
+            {date: "2010-02-10", technician_id: 2, item_id: 2},
+            {date: "2010-03-10", technician_id: 2, item_id: 4},
+            {date: "2010-04-10", technician_id: 2, item_id: 5},
+            {date: "2010-05-10", technician_id: 2, item_id: 8},
+            {date: "2010-07-12", technician_id: 3, item_id: 9},
+            {date: "2010-07-10", technician_id: 4, item_id: 11},
+            {date: "2010-07-17", technician_id: 5, item_id: 12},
+            {date: "2010-07-16", technician_id: 6, item_id: 13},
+            {date: "2010-07-15", technician_id: 3, item_id: 14},
+            {date: "2010-07-14", technician_id: 4, item_id: 15},
+            {date: "2010-07-13", technician_id: 5, item_id: 16},
+            {date: "2010-07-12", technician_id: 6, item_id: 17},
+            {date: "2010-08-11", technician_id: 6, item_id: 10}])
 
 Contact.create([{name: "Homer Simpson", address: "1 Street Name", city: "Springfield", state: "MA", zip: "01212", phone:"1234567890", user_id: 1}, {name: "Marge Simpson", address: "1 Street Name", city: "Springfield", state: "MA", zip: "01212", phone:"1234561234", user_id: 2},  {name: "Bart Simpson", address: "1 Street Name", city: "Springfield", state: "MA", zip: "01212", phone:"3214561234", user_id: 3},  {name: "Lisa Simpson", address: "1 Street Name", city: "Springfield", state: "MA", zip: "01212", phone:"1114561234", user_id: 4}])

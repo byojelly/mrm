@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
   belongs_to :shop
-  has_many :manufacturers
-  has_many :categories, through: :manufacturers
+  has_many :tuneups
+  has_many :technicians, through: :tuneups
 
 #sets up nested forms for items to be created with mulptiple categories
-  accepts_nested_attributes_for :manufacturers
+  #accepts_nested_attributes_for :manufacturers
 
 
   validates :name, :condition, :itemtype, :shop_id, presence: true

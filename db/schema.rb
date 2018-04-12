@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180405201717) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -43,18 +37,24 @@ ActiveRecord::Schema.define(version: 20180405201717) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "manufacturers", force: :cascade do |t|
-    t.string "name"
-    t.integer "category_id"
-    t.integer "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "shops", force: :cascade do |t|
     t.string "name"
     t.text "detail"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "technicians", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tuneups", force: :cascade do |t|
+    t.date "date"
+    t.integer "item_id"
+    t.integer "technician_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
