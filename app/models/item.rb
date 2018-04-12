@@ -3,6 +3,10 @@ class Item < ApplicationRecord
   has_many :item_categories
   has_many :categories, through: :item_categories
 
+#sets up nested forms for items to be created with mulptiple categories
+  accepts_nested_attributes_for :item_categories
+
+
   validates :name, :condition, :itemtype, :shop_id, presence: true
   validates :condition, inclusion: { in: %w(used new), message: "%{value} is not a valid condition of used or new" }
   validates :itemtype, inclusion: { in: %w(electronic instrument gadget miscellaneous), message: "%{value} is not a valid item type" }
@@ -14,7 +18,7 @@ class Item < ApplicationRecord
   scope :available_and_new, -> {available.order("created_at DESC").limit(6)}
         #where("available = ?", true)
   scope :unavailable, -> {where("available = ?", false)}
-  
+
 
 
 
