@@ -15,7 +15,7 @@ User.destroy_all
 Shop.destroy_all
 Item.destroy_all
 Category.destroy_all
-ItemCategory.destroy_all
+Manufacturer.destroy_all
 Contact.destroy_all
 
 User.create([{email: "homer@simpson.com", password: "password"
@@ -80,26 +80,27 @@ Category.create([{name: "strings"},
             {name: "guitar"},
             {name: "accessories"}])
 
-ItemCategory.create([{category_id: 1, item_id: 1},
-            {category_id: 1, item_id: 2},
-            {category_id: 1, item_id: 4},
-            {category_id: 1, item_id: 5},
-            {category_id: 4, item_id: 3},
-            {category_id: 4, item_id: 6},
-            {category_id: 7, item_id: 7},
-            {category_id: 6, item_id: 1},
-            {category_id: 6, item_id: 2},
-            {category_id: 6, item_id: 4},
-            {category_id: 6, item_id: 5},
-            {category_id: 6, item_id: 8},
-            {category_id: 4, item_id: 9},
-            {category_id: 6, item_id: 11},
-            {category_id: 4, item_id: 12},
-            {category_id: 7, item_id: 13},
-            {category_id: 7, item_id: 14},
-            {category_id: 7, item_id: 15},
-            {category_id: 7, item_id: 16},
-            {category_id: 7, item_id: 17},
-            {category_id: 6, item_id: 10}])
+Manufacturer.create([
+            {name: "sony", category_id: 1, item_id: 1},
+            {name: "yamaha", category_id: 1, item_id: 2},
+            {name: "LG", category_id: 1, item_id: 4},
+            {name: "toshiba", category_id: 1, item_id: 5},
+            {name: "worlds best violas", category_id: 4, item_id: 3},
+            {name: "the piano gals", category_id: 4, item_id: 6},
+            {name: "the piano buds", category_id: 7, item_id: 7},
+            {name: "sony", category_id: 6, item_id: 1},
+            {name: "yamaha", category_id: 6, item_id: 2},
+            {name: "LG", category_id: 6, item_id: 4},
+            {name: "toshiba", category_id: 6, item_id: 5},
+            {name: "worlds best violas", category_id: 6, item_id: 8},
+            {name: "the piano gals", category_id: 4, item_id: 9},
+            {name: "the piano buds", category_id: 6, item_id: 11},
+            {name: "sony", category_id: 4, item_id: 12},
+            {name: "sony", category_id: 7, item_id: 13},
+            {name: "sony", category_id: 7, item_id: 14},
+            {name: "sony", category_id: 7, item_id: 15},
+            {name: "sony", category_id: 7, item_id: 16},
+            {name: "sony", category_id: 7, item_id: 17},
+            {name: "sony", category_id: 6, item_id: 10}])
 
 Contact.create([{name: "Homer Simpson", address: "1 Street Name", city: "Springfield", state: "MA", zip: "01212", phone:"1234567890", user_id: 1}, {name: "Marge Simpson", address: "1 Street Name", city: "Springfield", state: "MA", zip: "01212", phone:"1234561234", user_id: 2},  {name: "Bart Simpson", address: "1 Street Name", city: "Springfield", state: "MA", zip: "01212", phone:"3214561234", user_id: 3},  {name: "Lisa Simpson", address: "1 Street Name", city: "Springfield", state: "MA", zip: "01212", phone:"1114561234", user_id: 4}])

@@ -1,8 +1,8 @@
 class Category < ApplicationRecord
-  has_many :item_categories
-  has_many :items, through: :item_categories
+  has_many :manufacturers
+  has_many :items, through: :manufacturers
 
   validates :name, presence: true
 
-  
+
 end

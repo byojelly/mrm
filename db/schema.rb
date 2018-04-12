@@ -30,13 +30,6 @@ ActiveRecord::Schema.define(version: 20180405201717) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "item_categories", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "year"
@@ -46,6 +39,14 @@ ActiveRecord::Schema.define(version: 20180405201717) do
     t.boolean "available", default: true
     t.integer "quantity", default: 1
     t.integer "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "manufacturers", force: :cascade do |t|
+    t.string "name"
+    t.integer "category_id"
+    t.integer "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
