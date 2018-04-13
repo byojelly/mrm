@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
   belongs_to :shop
-  has_many :tuneups
+  has_many :tuneups, inverse_of: :item  #https://robots.thoughtbot.com/accepts-nested-attributes-for-with-has-many-through
   has_many :technicians, through: :tuneups
 
-#sets up nested forms for items to be created with mulptiple categories
+#sets up nested forms for items to be created 
   accepts_nested_attributes_for :tuneups
 
 
@@ -23,7 +23,6 @@ class Item < ApplicationRecord
 
 
 end
-
 
 
 #Client.order("created_at DESC")

@@ -27,11 +27,10 @@
 --------------</br>
     <%=f.fields_for :tuneups do |appointment_form|%>
           <%= appointment_form.label :date, "Last Tuneup Date" %></br>
-          <%= appointment_form.date_field :date %>
-          <%=appointment_form.fields_for :technician do |technician_form|%></br>
-                <%= technician_form.label :name, "Technician" %></br>
-                <%= technician_form.collection_select :id, Technician.order(:name), :id, :name, include_blank: true%>
-          <%end%>
+          <%= appointment_form.date_field :date %></br>
+          <%= appointment_form.label :technician_id, "Technician" %></br>
+          <%= appointment_form.collection_select :technician_id, Technician.order(:name), :id, :name, include_blank: true%>
+
     <%end%></br>
 
 

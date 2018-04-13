@@ -8,16 +8,16 @@ def new
     @item=Item.new
 
 
-    @tuneups = @item.tuneups.build
-    #binding.pry
-    @tuneups.build_technician(name: nil)
-    #binding.pry
+    @tuneup = @item.tuneups.build
+#binding.pry
+    #@tuneup.build_technician(name: nil)
+#binding.pry
     #@item.categories.build
 end
 def create
-
+binding.pry
   @item = Item.new(item_params)
-  binding.pry
+
   if @item.save
     binding.pry
 
@@ -51,7 +51,7 @@ def set_shop
 end
 
 def item_params
-  params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id, tuneups_attributes:[:id, :date], technician_attributes: [:id])
+  params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id, tuneups_attributes: [:date, :technician_id])#, tuneups_attributes: [:"0"][:date, technician_attributes: [:id]]
 end
 
 
