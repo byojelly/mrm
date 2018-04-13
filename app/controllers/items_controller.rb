@@ -6,22 +6,24 @@ def show
 end
 def new
     @item=Item.new
+
+
+    @tuneups = @item.tuneups.build
     #binding.pry
-#below would be used if we where creating new categories here but we are only associating
-    #@item.categories.build
+    @tuneups.build_technician(name: nil)
+    #binding.pry
     #@item.categories.build
 end
 def create
 
   @item = Item.new(item_params)
-
+  binding.pry
   if @item.save
     binding.pry
-      params[:item][:categories].each do |id|
-             #ItemCategory.create(category_id: id, item_id: @item.id)
-       end
+
       redirect_to shop_item_path(@shop, @item)
   else
+    binding.pry
       render 'new'
   end
 end
@@ -49,7 +51,7 @@ def set_shop
 end
 
 def item_params
-  params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id)
+  params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id, tuneups_attributes:[:id, :date], technician_attributes: [:id])
 end
 
 

@@ -22,15 +22,19 @@
     <%= f.label :itemtype%><br>
     <%= f.select :itemtype, ['instrument', 'electronic', 'gadget', "miscellaneous"]%><br>
 
-    <%#=f.fields_for :categories do |cat|%>
-            <%#= cat.label :category_id%>
-            <%#= cat.collection_select :name, Category.order(:name), :id, :name, include_blank: true%><br>
-            <%#= cat.label :category_id%>
-            <%#= cat.collection_select :name1, Category.order(:name), :id, :name, include_blank: true%><br>
-    <%#end%>
-
     <%= f.label :quantity%><br>
     <%= f.text_field :quantity%><br>
+--------------</br>
+    <%=f.fields_for :tuneups do |appointment_form|%>
+          <%= appointment_form.label :date, "Last Tuneup Date" %></br>
+          <%= appointment_form.date_field :date %>
+          <%=appointment_form.fields_for :technician do |technician_form|%></br>
+                <%= technician_form.label :name, "Technician" %></br>
+                <%= technician_form.collection_select :id, Technician.order(:name), :id, :name, include_blank: true%>
+          <%end%>
+    <%end%></br>
+
+
 
     <%= f.hidden_field :shop_id, :value => @shop.id %><br>
   </div>

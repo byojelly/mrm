@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   has_many :technicians, through: :tuneups
 
 #sets up nested forms for items to be created with mulptiple categories
-  #accepts_nested_attributes_for :manufacturers
+  accepts_nested_attributes_for :tuneups
 
 
   validates :name, :condition, :itemtype, :shop_id, presence: true
