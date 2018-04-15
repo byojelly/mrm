@@ -29,9 +29,9 @@ class ItemsController < ApplicationController
 
     end
     def update
-      #binding.pry
+  #  binding.pry
         if @item.update(item_params)
-    #binding.pry
+  #  binding.pry
             redirect_to shop_item_path(@shop, @item)
         else
             render 'edit'
@@ -50,9 +50,12 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-    #  binding.pry
-              #this if statement allows, the form to process if the user does not add tunep information to the form (leaving it blank)
-              if params[:item][:tuneups_attributes][:"0"][:date].empty? && params[:item][:tuneups_attributes][:"0"][:technician_id].empty?
+      #binding.pry
+              #this if statement allows:
+              # the first part checks to see if the tuneups form exist. this allows the edit form to work when a tuneup does not exits
+              #process if the user does not add tunep information to the form (leaving it blank)
+              if !params[:item].include?("tuneups_attributes") ||
+(params[:item][:tuneups_attributes][:"0"][:date].empty? && params[:item][:tuneups_attributes][:"0"][:technician_id].empty?)
                     params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id)
               else
                 #binding.pry
