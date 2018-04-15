@@ -21,12 +21,13 @@ class Item < ApplicationRecord
 
 
   #avoiding duplicate tuneups
-  def tuneups_attributes=(tuneups)
+  def tuneups_attributes=(tuneups_attributes)
     #binding.pry
-    tuneups.each do |t|
-      #binding.pry
-      Tuneup.find_or_create_by(technician_id: t[1][:technician_id], date: t[1][:date])
-
+    tuneups_attributes.values.each do |t|
+#binding.pry
+      tuneup = Tuneup.find_or_create_by(t)
+#binding.pry
+      self.tuneups << tuneup
     end
   end
 

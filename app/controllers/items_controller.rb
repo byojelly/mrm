@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
     def create
 
       @item = Item.new(item_params)
+    #  binding.pry
       if @item.save
 
           redirect_to shop_item_path(@shop, @item)
@@ -49,6 +50,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
+    #  binding.pry
               #this if statement allows, the form to process if the user does not add tunep information to the form (leaving it blank)
               if params[:item][:tuneups_attributes][:"0"][:date].empty? && params[:item][:tuneups_attributes][:"0"][:technician_id].empty?
                     params.require(:item).permit(:name, :year, :condition, :detail, :itemtype, :available, :quantity, :shop_id)

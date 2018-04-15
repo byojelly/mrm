@@ -25,17 +25,20 @@
     <%= f.label :quantity%><br>
     <%= f.text_field :quantity%><br>
 --------------</br>
-    <% if current_page?(edit_shop_item_path)%>
-          <b>Please note that tuneups cannot be updated at this time.</b>
+    <% if current_page?(new_shop_item_path)%>
+            <%=f.fields_for :tuneups do |appointment_form|%>
+                  </br><%= appointment_form.label :date, "Last Tuneup Date" %></br>
+                  <%= appointment_form.date_field :date %></br>
+                  <%= appointment_form.label :technician_id, "Technician" %></br>
+                  <%= appointment_form.collection_select :technician_id, Technician.order(:name), :id, :name, include_blank: true%>
+
+            <%end%></br>
+    <% elsif current_page?(edit_shop_item_path)%>
+        <b>Please note that tuneups cannot be updated at this time.</b>
           <%#issue with working out the tuneups_attributes= method in the item module, and the items_params method in items controller%>
     <%end%>
-    <%=f.fields_for :tuneups do |appointment_form|%>
-          </br><%= appointment_form.label :date, "Last Tuneup Date" %></br>
-          <%= appointment_form.date_field :date %></br>
-          <%= appointment_form.label :technician_id, "Technician" %></br>
-          <%= appointment_form.collection_select :technician_id, Technician.order(:name), :id, :name, include_blank: true%>
 
-    <%end%></br>
+
 
 
 
