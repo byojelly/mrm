@@ -13,7 +13,8 @@ Rails.application.routes.draw do
             resources :items, only: [:show, :new, :create, :edit, :update]
   end
   #resources :categories, only: [:show]
-  resources :contact, only: [:show, :edit, :update]
+  resources :contacts, only: [:show, :edit, :update]
+  resources :tuneups, only: [:update]
   #get 'shops/:id/items/:item_id', to: 'shops#item'
 #  #omni auth facebook routing
 #  get '/auth/facebook/callback' => 'sessions#create'
