@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 20180405201717) do
 
   create_table "contacts", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "zip"
-    t.string "phone"
+    t.string "name", default: "UPDATE"
+    t.string "address", default: "UPDATE"
+    t.string "city", default: "UPDATE"
+    t.string "state", default: "NJ"
+    t.string "zip", default: "00000"
+    t.string "phone", default: "0000000000"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

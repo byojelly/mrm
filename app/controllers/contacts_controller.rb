@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
       before_action :set_contact, only:[:show, :edit, :update]
 
     def show
-binding.pry
+#binding.pry
     end
     def edit
       require_logged_in
