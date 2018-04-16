@@ -51,8 +51,6 @@ Confirm:
       - tuneups date_format helper
  [x] Views use partials if appropriate
 
-
-
 Notes
 1) rails new mysticridgemusic #setup new project
 2) copy of gemfiles and understand how they working
@@ -89,11 +87,3 @@ Notes
 11) setup general crud actions for items, shops etc
 12) has many through setup with items have many tuneups, technicians have many tuneups, tuneups belong to technicians and items
     - in order to create a new contact when a user is initialized, i had to devise generate the user controllers and add code into the RegistrationsController as well as the CallbacksController (omniauth)
-
-
-Name: <%= @contact.name%></br>
-Address: <%= @contact.address%></br>
-City: <%= @contact.city%></br>
-State: <%= @contact.state%></br>
-Zip: <%= @contact.zip%></br>
-Phone: <%= @contact.phone%></br>
