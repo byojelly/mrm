@@ -33,9 +33,10 @@
                   <%= appointment_form.collection_select :technician_id, Technician.order(:name), :id, :name, include_blank: true%>
 
             <%end%></br>
-    <% elsif current_page?(edit_shop_item_path)%>
+    <% else %>
         <b>Please note that tuneups cannot be updated at this time.</b>
           <%#issue with working out the tuneups_attributes= method in the item module, and the items_params method in items controller%>
+
     <%end%>
 
 
