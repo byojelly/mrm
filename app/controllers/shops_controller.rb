@@ -16,7 +16,7 @@ class ShopsController < ApplicationController
     end
   end
   def edit
-
+    require_logged_in #located in application controller
   end
   def update
       if @shop.update(shop_params)

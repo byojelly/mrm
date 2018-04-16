@@ -51,7 +51,9 @@ Confirm:
       - tuneups date_format helper
  [x] Views use partials if appropriate
 
-Steps
+
+
+Notes
 1) rails new mysticridgemusic #setup new project
 2) copy of gemfiles and understand how they working
 3) setup devise for user
@@ -62,8 +64,19 @@ Steps
 8) setup routes and visuals of site using, views, controllers, and models
 9) setup omniauth login
     used https://www.codementor.io/anaumov/rails-omniauth-with-devise--github-example-du107rmn7 as guide along with loose help from https://richonrails.com/articles/google-authentication-in-ruby-on-rails/ (last link does not take devise into consideration)
-
-    CURRENT flatiron CURRICULUM IS NOT CLEAR ON HOW TO IMPLEMENT. ASK FOR HELP RECONFIGURING TO HIDE THE CLIENT ID AND SECRET KEY USING DOT_ENV GEM. EXISTS IN CURRENT OMNIAUTH LESSON BUT IMPLEMENTATION OF FACEBOOK IN LESSON IS INCORRECT
+    Steps
+    1 - rails gem
+          gem 'dotenv-rails'  #allows us to setup a file to store our client and secret keys for omniauth without sending to github
+          gem 'omniauth'  #gem to allow omniauth (may already exist in devise)
+          gem 'omniauth-github'
+    2-    in routes add route to route ommni auth CallbacksController
+    3 - create callbacks controller and add methods for each omniauth
+    4 - add a migrations file with table columns uid, provider, and any other table fields necessary
+    5 - in User module, activate omniauthable in devise, and setup class method self.from_omniauth(auth) method that sets the return attributes from the site
+    6 - create app with the omni auth site and obtain  the app key and secret code
+    7  - this project uses dot-env gem to hide the app code and secret key from github.  Under root directory, .env file has the the code and key, config/initializers/devise.rb update with
+              config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], :scope => 'user:email'
+              config.omniauth :amazon, ENV['AMAZON_KEY'], ENV['AMAZON_SECRET']#, :scope => 'profile:user_id', 'profile:email'
 
     adding additional omniauth affects the following:
         initial) lookup omniauth provider gem, follow instructions on setting up app with the provider interface, provide callback url like http://localhost:3000/users/auth/amazon/callback, and obtain app key and app secret
