@@ -3,6 +3,4 @@ class Technician < ApplicationRecord
   has_many :items, through: :tuneups
 
   validates :name, presence: true
-
-
 end
