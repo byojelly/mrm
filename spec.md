@@ -67,7 +67,7 @@ Notes
           gem 'dotenv-rails'  #allows us to setup a file to store our client and secret keys for omniauth without sending to github
           gem 'omniauth'  #gem to allow omniauth (may already exist in devise)
           gem 'omniauth-github'
-    2-    in routes add route to route ommni auth CallbacksController
+    2-    in config/routes add route to route ommni auth CallbacksController
     3 - create callbacks controller and add methods for each omniauth
     4 - add a migrations file with table columns uid, provider, and any other table fields necessary
     5 - in User module, activate omniauthable in devise, and setup class method self.from_omniauth(auth) method that sets the return attributes from the site
