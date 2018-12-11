@@ -64,6 +64,9 @@ INSTALLATION GUIDE
                     AMAZON_SECRET=_____place_secret_here__________
 
         5) Start a local server to test out the application via "rails s"
+            a) the terminal should indicate "Listening on tcp://0.0.0.0:3000" or another local host
+            b) in a url type in "localhost:3000" to view the application
+
 
 HOW TO CONTRIBUTE
       If you have read this far than hopefully you want to learn more about the app and how you can contribute to making it better.
