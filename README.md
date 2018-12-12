@@ -11,7 +11,7 @@ APPLICATION DESCRIPTION
 
       I have added the following gem files for this project.  
               gem 'devise'  #performs the major authentication work in this app
-              gem 'dotenv-rails'  #allows us to setup a file to store our client and secret keys for omniauth without sending to github
+              gem 'dotenv-rails'  #allows us to setup a file to store our client and secret keys (pki) for omniauth without sending to github
               gem 'omniauth'  #gem to allow omniauth (may already exist in devise)
               gem 'omniauth-github'
               gem 'omniauth-amazon'
@@ -50,6 +50,7 @@ INSTALLATION GUIDE
         2) Run the Database migration via "rake db:migrate"
         3) Run the seed file and populate the databse with information via "rake db:seed"
         4) Start a local server to test out the application via "rails s"
+            Notes: when running terminal command "rails s" it will display the "Listening on tcp://0.0.0.0:3000" or an equivalent. As this is running, you can view the code in a browser via "localhost:3000"
 
 HOW TO CONTRIBUTE
       If you have read this far than hopefully you want to learn more about the app and how you can contribute to making it better.
