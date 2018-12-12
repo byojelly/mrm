@@ -46,11 +46,32 @@ APPLICATION DESCRIPTION
 
 INSTALLATION GUIDE
       To get started in the application, fork and clone the repo to your local terminal. Then.......
+
         1) Install the gems via "bundle install"
+
         2) Run the Database migration via "rake db:migrate"
+
         3) Run the seed file and populate the databse with information via "rake db:seed"
+<<<<<<< HEAD
         4) Start a local server to test out the application via "rails s"
             Notes: when running terminal command "rails s" it will display the "Listening on tcp://0.0.0.0:3000" or an equivalent. As this is running, you can view the code in a browser via "localhost:3000"
+=======
+        
+        4) If you would like to add omniauth functionality:
+              a) under the root directory create a file named ".env"
+              b) setup your client key and secret_key in the .env file like the following example for github and amazon omniauth (#note you will have to setup applications with providers that have omniauth capabilities):
+
+                    GITHUB_KEY=_____place_key_here__________
+                    GITHUB_SECRET=_____place_secret_here__________
+
+                    AMAZON_KEY=_____place_key_here__________
+                    AMAZON_SECRET=_____place_secret_here__________
+
+        5) Start a local server to test out the application via "rails s"
+            a) the terminal should indicate "Listening on tcp://0.0.0.0:3000" or another local host
+            b) in a url type in "localhost:3000" to view the application
+
+>>>>>>> dace0e5410192fc715fbfc71e262904b31b1619d
 
 HOW TO CONTRIBUTE
       If you have read this far than hopefully you want to learn more about the app and how you can contribute to making it better.
