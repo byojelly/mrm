@@ -14,6 +14,7 @@ gem 'dotenv-rails'  #allows us to setup a file to store our client and secret ke
 gem 'omniauth'  #gem to allow omniauth (may already exist in devise)
 gem 'omniauth-github'
 gem 'omniauth-amazon'
+        #https://sellercentral.amazon.com/hz/home
 gem 'pundit' #Pundit offers a way for us to organize our authorization code. With Pundit, you create Policy classes for your models, which define what users can do to those models. This gives you a straightforward, modular way to separate the concern of authorization from your controllers and your model logic.
     #pundit not being used at this time for authorization due to time constraints
 #-----------------------------------------
