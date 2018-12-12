@@ -2,6 +2,8 @@
 
 APPLICATION DESCRIPTION
 
+NOTE IF YOU WOULD LIKE TO ADD omniauth SUPPORT LOCALLY, REFER TO STEP 5 below
+
       Hello and welcome to the Mystic Ridge Music Shop application.  This application is built on ruby on rails and allows users the ability to :
             -sign in, signout, signup, signup with omniauthable means (github and amazon accounts)
             -create and edit contact information for the accounts
@@ -56,8 +58,8 @@ INSTALLATION GUIDE
         4) Start a local server to test out the application via "rails s"
             Notes: when running terminal command "rails s" it will display the "Listening on tcp://0.0.0.0:3000" or an equivalent. As this is running, you can view the code in a browser via "localhost:3000"
 =======
-        
-        4) If you would like to add omniauth functionality:
+
+        5) If you would like to add omniauth functionality:
               a) under the root directory create a file named ".env"
               b) setup your client key and secret_key in the .env file like the following example for github and amazon omniauth (#note you will have to setup applications with providers that have omniauth capabilities):
 
@@ -67,7 +69,7 @@ INSTALLATION GUIDE
                     AMAZON_KEY=_____place_key_here__________
                     AMAZON_SECRET=_____place_secret_here__________
 
-        5) Start a local server to test out the application via "rails s"
+        6) Start a local server to test out the application via "rails s"
             a) the terminal should indicate "Listening on tcp://0.0.0.0:3000" or another local host
             b) in a url type in "localhost:3000" to view the application
 
